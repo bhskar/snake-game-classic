@@ -13,3 +13,17 @@ body {
   height: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  background-color: #333;
+  border: 1px solid #000;
+}
+
+#score {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
