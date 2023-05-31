@@ -14,3 +14,13 @@ function createCell(x, y) {
   cell.style.gridRowStart = y + 1;
   return cell;
 }
+
+function drawSnake() {
+  board.innerHTML = "";
+  snake.forEach((segment, index) => {
+    const cell = createCell(segment.x, segment.y);
+    cell.classList.add("snake");
+    cell.style.backgroundColor = `hsl(0, 0%, ${100 - (index * 5)}%)`;
+    board.appendChild(cell);
+  });
+}
