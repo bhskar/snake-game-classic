@@ -37,3 +37,11 @@ function drawFood() {
   cell.style.backgroundColor = "lime";
   board.appendChild(cell);
 }
+
+function generateFood() {
+  food = {
+    x: Math.floor(Math.random() * gridSize),
+    y: Math.floor(Math.random() * gridSize)
+  };
+
+  
