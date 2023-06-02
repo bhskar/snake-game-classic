@@ -31,3 +31,9 @@ function drawSnake() {
   });
 }
 
+function drawFood() {
+  const cell = createCell(food.x, food.y);
+  cell.classList.add("food");
+  cell.style.backgroundColor = "lime";
+  board.appendChild(cell);
+}
