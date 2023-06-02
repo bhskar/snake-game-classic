@@ -6,6 +6,12 @@ const cellSize = 20;
 const initialSnakeLength = 4;
 const initialSpeed = 200;
 
+let snake = [{ x: 10, y: 10 }];
+let food = { x: 15, y: 10 };
+let direction = "right";
+let score = 0;
+let speed = initialSpeed;
+let gameLoop;
 
 function createCell(x, y) {
   const cell = document.createElement("div");
@@ -24,3 +30,4 @@ function drawSnake() {
     board.appendChild(cell);
   });
 }
+
