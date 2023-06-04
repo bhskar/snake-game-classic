@@ -1,6 +1,8 @@
+
 const board = document.getElementById("game-board");
 const scoreDisplay = document.getElementById("score");
 
+// Set up game variables
 const gridSize = 20;
 const cellSize = 20;
 const initialSnakeLength = 4;
@@ -12,6 +14,9 @@ let direction = "right";
 let score = 0;
 let speed = initialSpeed;
 let gameLoop;
+
+// Set up keyboard event listener to control snake movement
+document.addEventListener("keydown", changeDirection);
 
 function createCell(x, y) {
   const cell = document.createElement("div");
@@ -30,6 +35,7 @@ function drawSnake() {
     board.appendChild(cell);
   });
 }
+
 
 function drawFood() {
   const cell = createCell(food.x, food.y);
