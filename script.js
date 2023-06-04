@@ -6,8 +6,8 @@ const cellSize = 20;
 const initialSnakeLength = 4;
 const initialSpeed = 200;
 
-let snake = [{ x: 10, y: 10 }];
-let food = { x: 15, y: 10 };
+let snake = [{ x: 10, y: 10 }]; //array of objects with x and y properties
+let food = { x: 15, y: 10 }; // object with x and y properties
 let direction = "right";
 let score = 0;
 let speed = initialSpeed;
@@ -38,10 +38,31 @@ function drawFood() {
   board.appendChild(cell);
 }
 
-function generateFood() {
-  food = {
-    x: Math.floor(Math.random() * gridSize),
-    y: Math.floor(Math.random() * gridSize)
-  };
+function moveSnake() {
+  const head = { ...snake[0] };
+  switch (direction) {
+    case "up":
+      head.y--;
+      break;
+    case "down":
+      head.y++;
+      break;
+    case "left":
+      head.x--;
+      break;
+    case "right":
+      head.x++;
+      break;
+  }
+  snake.unshift(head);
+  if (head.x === food.x && head.y === food.y) {
+    score+=10;
+    speed -= 5;
+    scoreDisplay.textContent = "Score: " + score;
+    generateFood();
+  } else {
+    snake.pop();
+  }
+}
 
-  
+
