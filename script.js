@@ -38,6 +38,7 @@ function drawFood() {
   board.appendChild(cell);
 }
 
+// function to move the snake based on the current direction
 function moveSnake() {
   const head = { ...snake[0] };
   switch (direction) {
