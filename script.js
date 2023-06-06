@@ -72,7 +72,7 @@ function moveSnake() {
   }
 }
 
-
+// Generate new food at a random position
 function generateFood() {
   food = {
     x: Math.floor(Math.random() * gridSize),
@@ -85,6 +85,7 @@ function generateFood() {
   }
 }
 
+// Handle keyboard events to change the direction of the snake
 function changeDirection(event) {
   const key = event.keyCode;
 
