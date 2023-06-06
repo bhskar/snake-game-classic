@@ -73,3 +73,29 @@ function moveSnake() {
 }
 
 
+function generateFood() {
+  food = {
+    x: Math.floor(Math.random() * gridSize),
+    y: Math.floor(Math.random() * gridSize)
+  };
+
+  // Ensure food is not generated on the snake's body
+  if (snake.some(segment => segment.x === food.x && segment.y === food.y)) {
+    generateFood();
+  }
+}
+
+function changeDirection(event) {
+  const key = event.keyCode;
+
+  if (key === 38 && direction !== "down") {
+    direction = "up";
+  } else if (key === 40 && direction !== "up") {
+    direction = "down";
+  } else if (key === 37 && direction !== "right") {
+    direction = "left";
+  } else if (key === 39 && direction !== "left") {
+    direction = "right";
+  }
+}
+
