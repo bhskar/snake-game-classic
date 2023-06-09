@@ -100,3 +100,19 @@ function changeDirection(event) {
   }
 }
 
+function checkCollision() {
+  const head = snake[0];
+
+  if (
+    head.x < 0 ||
+    head.x >= gridSize ||
+    head.y < 0 ||
+    head.y >= gridSize ||
+    snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y) 
+  ) 
+  {
+    clearInterval(gameLoop);
+    alert("Game over!");
+  }
+}
+
