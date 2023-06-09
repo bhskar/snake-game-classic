@@ -100,6 +100,7 @@ function changeDirection(event) {
   }
 }
 
+// Check for collision with the walls or the snake's body
 function checkCollision() {
   const head = snake[0];
 
@@ -108,7 +109,7 @@ function checkCollision() {
     head.x >= gridSize ||
     head.y < 0 ||
     head.y >= gridSize ||
-    snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y) 
+    snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y) // check for snake body collision
   ) 
   {
     clearInterval(gameLoop);
