@@ -117,3 +117,9 @@ function checkCollision() {
   }
 }
 
+function gameLoopFn() {
+  drawSnake();
+  drawFood();
+  moveSnake();
+  checkCollision();
+}
