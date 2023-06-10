@@ -123,3 +123,15 @@ function gameLoopFn() {
   moveSnake();
   checkCollision();
 }
+
+function startGame() {
+  score = 0;
+  speed = initialSpeed;
+  snake = Array.from({ length: initialSnakeLength }, (_, index) => ({ x: 10 - index, y: 10 }));
+  direction = "right";
+  scoreDisplay.textContent = "Score: " + score;
+  generateFood();
+  gameLoop = setInterval(gameLoopFn, speed);
+}
+
+
