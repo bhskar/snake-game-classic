@@ -124,6 +124,7 @@ function gameLoopFn() {
   checkCollision();
 }
 
+//Start the game
 function startGame() {
   score = 0;
   speed = initialSpeed;
@@ -134,4 +135,4 @@ function startGame() {
   gameLoop = setInterval(gameLoopFn, speed);
 }
 
-
+startGame();
