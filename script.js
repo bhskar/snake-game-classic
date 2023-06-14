@@ -18,14 +18,16 @@ let gameLoop;
 // Set up keyboard event listener to control snake movement
 document.addEventListener("keydown", changeDirection);
 
+// responsible for creating a cell element in the game grid based on the provided x and y coordinates
 function createCell(x, y) {
   const cell = document.createElement("div");
   cell.style.width = cell.style.height = cellSize + "px";
   cell.style.gridColumnStart = x + 1;
   cell.style.gridRowStart = y + 1;
-  return cell;
+  return cell; // returns the created cell element
 }
 
+//// Draw the snake on the canvas
 function drawSnake() {
   board.innerHTML = "";
   snake.forEach((segment, index) => {
@@ -36,7 +38,7 @@ function drawSnake() {
   });
 }
 
-
+//// Draw the food on the canvas
 function drawFood() {
   const cell = createCell(food.x, food.y);
   cell.classList.add("food");
