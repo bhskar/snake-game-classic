@@ -119,6 +119,23 @@ function checkCollision() {
   }
 }
 
+function gameOver() {
+  clearInterval(gameLoop);
+  const gameBoard = document.getElementById("game-board");
+  const gameOverText = document.getElementById("game-over-text");
+  const playAgainBtn = document.getElementById("play-again");
+
+  gameBoard.style.opacity = "0.5";
+  gameOverText.textContent = "Game Over!";
+  document.getElementById("game-over").style.display = "block";
+
+  playAgainBtn.addEventListener("click", () => {
+    gameBoard.style.opacity = "1";
+    document.getElementById("game-over").style.display = "none";
+    startGame();
+  });
+}
+
 function gameLoopFn() {
   drawSnake();
   drawFood();
